@@ -1588,7 +1588,7 @@
                     <footer
                         class="border-t border-line py-3 px-4 sm:px-6 text-center text-xs text-basil-light/70"
                     >
-                        Designed by K&amp;M
+                        Designed by Madhav
                     </footer>
                 </div>
             </div>
@@ -2444,16 +2444,18 @@
             const DEFAULT_STAFF = [
                 {
                     id: "s01",
-                    name: "Admin User",
-                    role: "Admin",
-                    email: "admin@quickmart.in",
+                    name: "Priya",
+                    role: "Cashier",
+                    password: "Cashier@123",
+                    email: "priya@quickmart.in",
                     phone: "98765 43210",
                 },
                 {
                     id: "s02",
-                    name: "Ravi Kumar",
-                    role: "Cashier",
-                    email: "ravi@quickmart.in",
+                    name: "Madhav",
+                    role: "Admin",
+                    password: "Admin@123",
+                    email: "madhav@quickmart.in",
                     phone: "91234 56780",
                 },
             ];
@@ -2488,19 +2490,6 @@
             let paymentTimerInterval = null;
             let paymentTimeLeft = 0;
 
-            // Sirf ye vale accounts login krenge
-            const VALID_LOGINS = [
-                {
-                    email: "priya@quickmart.in",
-                    password: "Cashier@123",
-                    role: "Cashier",
-                },
-                {
-                    email: "madhav@quickmart.in",
-                    password: "Admin@123",
-                    role: "Admin",
-                },
-            ];
             // Sirf ye vale promo codes
             const PROMO_CODES = {
                 FESTIVE10: 10,
@@ -3482,7 +3471,7 @@
                     return;
                 }
 
-                const match = VALID_LOGINS.find(
+                const match = DEFAULT_STAFF.find(
                     (v) =>
                         v.email.toLowerCase() === email.toLowerCase() &&
                         v.password === password &&
